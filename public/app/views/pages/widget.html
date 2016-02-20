@@ -1,0 +1,123 @@
+<!-- Header Bar -->
+<div class="row header col-xs-12">
+  <div class="user pull-right">
+    <div class="item dropdown">
+      <a href="#" class="dropdown-toggle"><img src="img/avatar.jpg" alt=""></a>
+    </div>
+  </div>
+  <div class="meta">
+    <div class="page">{{ widget.name }}</div>
+    <div class="breadcrumb-links"><a href="/">Home</a>/ <a href="/widgets">Widgets</a>/ {{ widget.id }}</div>
+  </div>
+</div>
+<!-- End Header Bar -->
+
+
+<!-- Tables -->
+<div class="row">
+
+  <!-- Widget listing -->
+  <div class="col-lg-12" ng-hide="edit">
+    <div class="widget">
+      <div class="widget-header">{{ widget.name }}
+        <div class="pull-right">
+          <button class="btn btn-sm btn-info" ng-click="edit = true">+ Edit</button>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="text-center">ID</th>
+              <th>Name</th>
+              <th>Color</th>
+              <th>Price</th>
+              <th>Melts?</th>
+              <th>Inventory</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-center">{{ widget.id }}</td>
+              <td>{{ widget.name }}</td>
+              <td>{{ widget.color }}</td>
+              <td>{{ widget.price | currency }}</td>
+              <td>{{ widget.melts }}</td>
+              <td>{{ widget.inventory | number }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div><!-- End Widgets -->
+
+</div><!-- End Row -->
+
+<hr>
+
+<!-- Create/Edit -->
+<div class="row" ng-show="edit">
+
+  <!-- Widget listing -->
+  <div class="col-lg-12">
+    <div class="widget">
+      <div class="widget-header">Edit {{ widget.name }}
+        <div class="pull-right">
+          <button class="btn btn-sm btn-danger" ng-click="edit = false">Close</button>
+        </div>
+      </div>
+      <div class="widget-body">
+        <form name="editWidgetForm" class="form-horizontal"  ng-submit="editWidget(widget.id, editWidgetForm.$valid)">
+
+          <legend>Edit Widget</legend>
+
+          <!-- Name-->
+          <div class="controls">
+          Name
+            <input id="widget-name" ng-model="widget.name" name="widget-name" type="text" class="input-medium" required>
+          </div>
+
+          <!-- Price -->
+          <div class="controls">
+            <div class="input-prepend">
+            Price
+              <span class="add-on">$</span>
+              <input id="widget-price" ng-model="widget.price" name="widget-price" class="input-medium" type="text" required>
+            </div>
+          </div>
+
+          <!-- Color -->
+          <div class="controls">
+          Color
+            <select id="widget-color" ng-model="widget.color" name="widget-color" class="input-large" required>
+              <option>red</option>
+              <option>purple</option>
+              <option>black</option>
+              <option>green</option>
+              <option>magenta</option>
+              <option>white</option>
+              <option>depends on the viewing angle</option>
+            </select>
+          </div>
+
+          <!-- Melts -->
+          <div class="controls">
+            Melts
+            <input type="checkbox" ng-model="widget.melts" name="widget-properties" id="widget-properties-0" value="melts">
+          </div>
+
+          <!-- Inventory -->
+          <div class="controls">
+            Inventory
+            <input id="widget-count" ng-model="widget.inventory" name="widget-count" type="text" class="input-small" required>
+          </div>
+
+          <!-- Submit -->
+          <div class"submit">
+          <button ng-disabled="editWidgetForm.$invalid" class="btn btn-sm btn-info">Submit</button>
+          </div>
+        </form>
+      </div><!-- End Widget body -->
+    </div><!-- End Widget -->
+  </div><!-- End Column -->
+</div><!-- End Row -->

@@ -1,0 +1,94 @@
+<!-- Header Bar -->
+          <div class="row header col-xs-12">
+            <div class="user pull-right">
+              <div class="item dropdown">
+                <a href="#" class="dropdown-toggle"><img src="img/avatar.jpg" alt=""></a>
+              </div>
+            </div>
+            <div class="meta">
+              <div class="page">Dashboard</div>
+              <div class="breadcrumb-links"><a href="/">Home</a> / Dashboard</div>
+            </div>
+          </div>
+          <!-- End Header Bar -->
+
+          <!-- Dashboard Boxes -->
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-xs-12">
+              <div class="widget">
+                <div class="widget-header">
+                  <div class="widget-icon green pull-left">
+                    <i class="fa fa-users"></i>
+                  </div>
+                  <div class="title">{{ users.length }}</div>
+                  <div class="comment">Users</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-xs-12">
+              <div class="widget">
+                <div class="widget-header">
+                  <div class="widget-icon green pull-left">
+                    <i class="fa fa-users"></i>
+                  </div>
+                  <div class="title">{{ widgets.length }}</div>
+                  <div class="comment">Widgets</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tables -->
+          <div class="row">
+
+            <!-- Users listing -->
+            <div class="col-lg-6">
+              <div class="widget">
+                <div class="widget-header">Users
+                  <div class="pull-right"><input type="text" ng-model="userSearch" placeholder="Search Users" class="form-control input-sm"></div>
+                </div>
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th class="text-center">ID</th>
+                        <th>Name</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="user in users | filter: userSearch">
+                        <td class="text-center">{{ user.id }}</td>
+                        <td><a ng-href="/users/{{ user.id }}">{{ user.name }}</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div><!-- End Users -->
+
+            <!-- Widget listing -->
+            <div class="col-lg-6">
+              <div class="widget">
+                <div class="widget-header">Widgets
+                  <div class="pull-right"><input type="text" ng-model="widgetSearch" placeholder="Search Widgets" class="form-control input-sm"></div>
+                </div>
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th class="text-center">ID</th>
+                        <th>Name</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="widget in widgets | limitTo: 10 | filter: widgetSearch">
+                        <td class="text-center">{{ widget.id }}</td>
+                        <td><a ng-href="/widgets/{{ widget.id }}">{{ widget.name }}</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div><!-- End Widgets -->
+
+          </div><!-- End Tables -->

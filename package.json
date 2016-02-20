@@ -1,0 +1,40 @@
+{
+  "name": "widgets-spa",
+  "version": "1.0.0",
+  "description": "Red Ventures Widgets SPA",
+  "main": "app/server.js",
+  "scripts": {
+    "start": "node app/server.js",
+    "dev": "nodemon app/server.js",
+    "postinstall": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrzimmerman/widgets-spa.git"
+  },
+  "keywords": [
+    "Widgets",
+    "SPA",
+    "Red",
+    "Venutures",
+    "Hire",
+    "Me",
+    "Please",
+    ":)"
+  ],
+  "author": "Justin Zimmerman <justin.richard.zimmerman@gmail.com> (http://justinzimmerman.net)",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/jrzimmerman/widgets-spa/issues"
+  },
+  "engines": {
+    "node": "4.2.x"
+  },
+  "homepage": "https://github.com/jrzimmerman/widgets-spa#readme",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "bower": "^1.7.2",
+    "express": "^4.13.3",
+    "morgan": "^1.6.1"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "widgets-spa",
+  "description": "Red Ventures Widgets SPA",
+  "main": "app/server.js",
+  "authors": [
+    "Justin Zimmerman <justin.richard.zimmerman@gmail.com> (http://justinzimmerman.net)"
+  ],
+  "keywords": [
+    "Widgets",
+    "SPA",
+    "Red",
+    "Venutures",
+    "Hire",
+    "Me",
+    "Please",
+    ":)"
+  ],
+  "homepage": "https://github.com/jrzimmerman/widgets-spa",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "font-awesome": "~4.5.0",
+    "rdash-ui": "~1.0.1",
+    "angular": "~1.4.8",
+    "angular-route": "~1.4.8"
+  }
+}
